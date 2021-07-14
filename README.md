@@ -2,10 +2,32 @@
 
 [![](https://img.shields.io/badge/Overleaf-ECNUthesis-brightgreen.svg)](https://www.overleaf.com/latex/templates/ecnuthesis-latex-thesis-template-for-east-china-normal-university/szppdtkvgvpk)
 
-### 华东师范大学本科生学士学位论文模版
+### 初中数学总复习讲义
 
 本模版使用 LaTeX3 重构了 [YijunYuan](https://github.com/YijunYuan) 的 [ECNU-Undergraduate-LaTeX](https://github.com/YijunYuan/ECNU-Undergraduate-LaTeX)，
-并将个人信息的填写、个性化设置、命令、环境等进行了一定的封装，让使用者可以更加方便地使用 LaTeX 进行创作。
+用于编写上海初中数学总复习讲义。
+
+### 内容
+理论上包括二次根式、全等三角形、反比例函数、一次函数、代数方程、四边形、概率、相似三角形、锐角三角比、二次函数、圆以及专题内容。
+覆盖上海市初二、初三数学全部内容。
+但部分内容因时间关系完成度不够高，还需要进一步完善。
+
+实际完成度如下：
+- 一次函数 完成度50%，还需要细化一些例题。
+- 四边形 完成度95%，只需要略微增加或删减题目。
+- 相似三角形，完成度85%，还需要细化专题并增加题目。
+- 锐角三角比，完成度45%，还需要扩充专题并增加题目。
+- 二次函数，完成度50%，还需要扩充专题并增加题目。
+
+可能会继续更新的板块：
+- 圆，预计半年后更新。
+- 统计，预计半年后新增。
+
+### 编写风格
+- 知识系统全面，细致严谨
+- 注重知识与题目的关联
+- 适度拓展
+- 培养思维
 
 ## 使用环境
 
@@ -25,12 +47,6 @@ latexmk -xelatex thesis
 
 请移步 [Wiki](https://github.com/Koyamin/ECNUThesis-Undergraduate/wiki) 阅读相关文档。
 
-## 不足与改进
-
-本模版仍有一些不足与值得改进之处。已知的不足如下所示。
-
-- 尾注功能未实现；
-- ……
 
 ## 参考
 
