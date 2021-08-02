@@ -68,6 +68,7 @@
 \usepackage{float}
 \usepackage{subfig}
 \usepackage{pifont}
+
 \newcommand\px{\mathrel{/\mkern-5mu/}}  %平行
 \newcommand\pxeq{\mathrel{\vcenter{     %平行且等于
 \ialign{\hfil##\hfil\crcr
@@ -2099,13 +2100,6 @@ C & 16 & 42 \\
 \clearpage
 \section{简单的排列组合}
 \clearpage
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.5\textwidth]{example-image}
-    \caption{图片在哪}
-\end{figure}
 \chapter{相似三角形}
 \section{比例}
 \begin{table}[H]
@@ -2151,19 +2145,21 @@ C & 16 & 42 \\
 \section{比例线段与黄金比例}
 \begin{knowledge}
     比例式$a:b=c:d$中，$a,d$称为比例外项，$b,c$称为比例内项，$d$称为第四比例项。\\
-    若$b=c$，即$a:b=b:d$，则$b$为$ad$的比例中项，满足$b^2=ac$. \\
+    若$b=c$，即$a:b=b:d$，则$b$为$ad$的比例中项，满足$b^2=ad$. \\
     若有四条线段长度为$a,b,c,d$，且满足$a:b=c:d$，则这四条线段为成比例线段。
 \end{knowledge}
 \begin{knowledge}
-    在线段$AB$上找一点$P$，把线段$AB$分成两条线段$AP,BC(AP>BP)$，且满足$AP^2=AB·BP$，则$P$为线段$AB$黄金分割点。\\
+    在线段$AB$上找一点$P$，把线段$AB$分成两条线段$AP,BP(AP>BP)$，且满足$AP^2=AB·BP$，则$P$为线段$AB$黄金分割点。
+    设$AB=l,AP=x$，则$x^2=l(l-x)$，$x^2+lx-l^2=0$，解得$x=\frac{\sqrt5-1}{2}l$.\\
     (1)$AP=\frac{\sqrt5 - 1}{2}AB \approx 0.618AB$ \\
     (2)$BP=\frac{3 - \sqrt5}{2}AB \approx 0.382AB$ \\
-    (3)黄金分割点有2个，另一个满足$AP<BP,BP^2=AB·AP.$
+    (3)黄金分割点有2个，另一个满足$AP<BP,BP^2=AB·AP.$ \\
+    (4)$\frac{\sqrt5-1}{2}+\frac{3-\sqrt5}{2}=1;\frac{\sqrt5-1}{2}·\frac{\sqrt5+1}{2}=1$.
 \end{knowledge}
 \begin{model}
     黄金三角形是指顶角或底角为$36^\circ$的等腰三角形。\\
     如左图，顶角为$36^\circ$的等腰三角形，底边与腰的比$\frac{BC}{AB}=\frac{\sqrt5-1}{2}$. \\
-    如右图，底角为$36^\circ$的等腰三角形，腰与底边的比$\frac{AB}{BC}=\frac{\sqrt5-1}{2}$. \\
+    如右图，底角为$36^\circ$的等腰三角形，腰与底边的比$\frac{AB}{BC}=\frac{\sqrt5-1}{2}$.
 \end{model}
 \begin{figure}[H]
 \centering
@@ -2171,8 +2167,7 @@ C & 16 & 42 \\
 \caption{黄金三角形}
 \end{figure}
 \begin{model}
-    如图，矩形$ADFB$中，$\frac{AD}{AB}=\frac{\sqrt5-1}{2}$，则该矩形为黄金矩形。\\
-    黄金矩形可以再次切分为一个正方形和一个黄金矩形。
+    如图，矩形$ADFB$中，$\frac{AD}{AB}=\frac{\sqrt5-1}{2}$，则该矩形为黄金矩形。黄金矩形可以再次切分为一个正方形和一个黄金矩形。
 \end{model}
 \begin{figure}[H]
 \centering
@@ -2180,21 +2175,59 @@ C & 16 & 42 \\
 \caption{黄金矩形}
 \end{figure}
 \begin{problem}
-    已知点$P$是线段$AB$的黄金分割点，且$AP=\sqrt5-1$，求$AB$的长。\\
+    已知点$P$是线段$AB$的黄金分割点，且$AP=\sqrt5-1$，求$AB$的长。
 \end{problem}
 \begin{problem}
     已知线段$AB=2$，$C$为$AB$的黄金分割点$(AC<BC)$，点$D$在$AB$上，且满足$AD^2=BD·AB$，求$\frac{CD}{AC}$的值。
 \end{problem}
 \clearpage
+\section{面积法}
+\begin{knowledge}
+    对于等高或同高的三角形，三角形面积比等于底边长度的比。\\
+    (探究1)如图(蝴蝶定理)，四边形$ABCD$中，$S_{\triangle AOB}=S_{\triangle COD}$，求证：$\frac{OA}{OC}=\frac{OD}{OB}.$ \\
+    证明：$\frac{S_{\triangle AOB}}{S_{\triangle COB}}=\frac{OA}{OC}=\frac{S_{\triangle COD}}{S_{\triangle COB}}=\frac{OD}{OB}$. \\
+    (探究2)$\triangle ABC$中，$D$为$AB$中点，$DE\px \px BC$交$AC$于$E$，求证：$E$为$AC$中点。\\
+    证明：$S_{\triangle ADE}=S_{\triangle BDE}=S_{\triangle CDE}.$ \\
+    (探究3)如图(燕尾定理)，$\triangle ABC$中，$AD,BE,CF$交于点$O$，求证：$\frac{S_{\triangle AOB}}{S_{\triangle AOC}}=\frac{BD}{CD}$. \\
+    证明：$\frac{S_{\triangle ABD}}{S_{\triangle ACD}}=\frac{BD}{CD}=\frac{S_{\triangle BOD}}{S_{\triangle COD}}=\frac{S_{\triangle ABD}-S_{\triangle BOD}}{S_{\triangle ACD}-S_{\triangle COD}}=\frac{S_{\triangle AOB}}{S_{\triangle AOC}}.$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/690.png}
+\caption{蝴蝶定理}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/860.png}
+\caption{燕尾定理}
+\end{figure}
+\begin{model}
+    如图(蝴蝶定理)，梯形$ABCD$中，$AD\px\px BC,AD=a,BC=b$，有如下结论成立：\\
+    (1)$S_3=S_4$ \\
+    (2)$S_3·S_4=S_1·S_2$ \\
+    (3)$\frac{S_1}{S_2}=\frac{a^2}{b^2}$ \\
+    (4)$S_1:S_2:S_3:S_4:S_{ABCD}=a^2:b^2:ab:ab:(a+b)^2$
+\end{model}
+\begin{knowledge}
+    在本章其他小节，利用面积法还可以证明如下结论：\\
+    (1)平行线分线段成比例 \\
+    (2)三角形重心性质 \\
+    (3)角平分线定理 \\
+    (4)塞瓦定理
+\end{knowledge}
+\clearpage
 \section{平行线分线段成比例}
 \begin{knowledge}
-    平行线分线段成比例定理：两条直线被三条平行线所截，所得的对应线段成比例。\\
-    如图，$a\px\px b\px\px c$，则有$\frac{AB}{BC}=\frac{DE}{EF}.$ \\
-    证明：$\frac{AB}{BC}=\frac{S_{\triangle ABE}}{S_{\triangle BCE}}=\frac{S_{\triangle DBE}}{S_{\triangle BFE}}=\frac{DE}{EF}.$ \\
-    根据合比定理、更比定理还能推出：\\
-    (1)$\frac{AB}{AC}=\frac{DE}{DF}$ \\
-    (2)$\frac{BC}{AC}=\frac{EF}{DF}$ \\
-    (3)$\frac{AB}{DE}=\frac{BC}{EF}$
+    平行线分线段成比例定理：两条直线被三条平行的直线所截，截得的对应线段成比例。\\
+    如图，即$a\px\px b\px\px c \Rightarrow \frac{AB}{BC}=\frac{DE}{EF}.$ \\
+    证明：$\frac{AB}{BC}=\frac{S_{\triangle ABE}}{S_{\triangle CBE}}=\frac{S_{\triangle DBE}}{S_{\triangle FBE}}=\frac{DE}{EF}.$ \\
+    根据比例的性质还能推出如下结论：\\
+    (1)$\frac{AB}{AC}=\frac{DE}{DF}$(上:总=上:总) \\
+    (2)$\frac{BC}{AC}=\frac{EF}{DF}$(下:总=下:总) \\
+    (3)$\frac{AB}{DE}=\frac{BC}{EF}=\frac{AC}{DF}$(上:上=下:下=总:总) \\
+    平行线等分线段定理：两条直线被三条平行的直线所截，如果在一条直线上截得的线段相等，那么在另一条直线上截得的线段也相等。\\
+    如图，即$a\px\px b\px\px c,AB=BC \Rightarrow DE=EF$. \\
+    注意：$\frac{AB}{BC}=\frac{DE}{EF} \nRightarrow a \px \px b \px \px c$
 \end{knowledge}
 \begin{figure}[H]
 \centering
@@ -2206,11 +2239,36 @@ C & 16 & 42 \\
 \end{problem}
 \begin{figure}[H]
 \centering
-\includegraphics[width=14cm]{picture/803.png}
+\includegraphics[width=10cm]{picture/803.png}
 \caption{练习图}
 \end{figure}
+\clearpage
+\section{三角形一边的平行线}
+\begin{knowledge}
+    三角形一边的平行线性质定理：平行于三角形一边的直线截其他两边所在的直线，截得的对应线段成比例。\\
+    如图，即$DE \px \px BC \Rightarrow \frac{AD}{AB}=\frac{AE}{AC}$. \\
+    三角形一边的平行线性质定理推论：平行与三角形的一边的直线截其他两边所在的直线，截得的三角形的三边与原三角形三边对应成比例。\\
+    如图，即$DE\px\px BC \Rightarrow \frac{AD}{AB}=\frac{AE}{AC}=\frac{DE}{BC}.$ \\
+    证明：过$E$作$EF\px\px AB$交直线$BC$于$F$，易证四边形$BDEF$为平行四边形，$DE=BF$.\\
+    $DE \px \px BC \Rightarrow \frac{AD}{AB}=\frac{AE}{AC}$ \\
+    $EF \px \px AB \Rightarrow \frac{AE}{AC}=\frac{BF}{BC}=\frac{DE}{BC}$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm]{picture/804.png}
+\caption{三角形一边的平行线}
+\end{figure}
+\begin{knowledge}
+    三角形一边的平行线判定定理：如果一条直线截三角形的两边所得的对应线段成比例，那么这条直线平行于三角形的第三边。\\
+    如左图，即$\frac{AD}{DB}=\frac{AE}{EC}\Rightarrow DE \px \px BC$. \\
+    证明：过$C$作$CF \px \px AB$交直线$DE$于$F$，$\frac{AD}{CF}=\frac{AE}{EC}$，又$\frac{AD}{BD}=\frac{AE}{EC}\Rightarrow BD=CF$，
+    故四边形$BDFC$为平行四边形，$DE\px \px BC$. \\
+    注意：$\frac{AD}{AB}=\frac{DE}{BC} \nRightarrow DE\px \px BC.$ \\
+    三角形一边的平行线判定定理推论：如果一条直线截三角形两边的延长线(这两边的延长线在第三边的同侧)所得的对应线段成比例，那么这条直线平行于三角形的第三边。\\
+    如右图，即$\frac{AD}{AB}=\frac{AE}{AC}\Rightarrow DE \px \px BC.$
+\end{knowledge}
 \begin{problem}
-    如图，梯形$ABCD,AD\px \px BC,BC=2AD,DE=EC$，求$\frac{AF}{CF}$和$\frac{EF}{BF}$的值。\\
+    如图，梯形$ABCD,AD\px \px BC,BC=2AD,DE=EC$，求$\frac{AF}{CF}$和$\frac{EF}{BF}$的值。
 \end{problem}
 \begin{figure}[H]
 \centering
@@ -2226,23 +2284,33 @@ C & 16 & 42 \\
 \caption{练习图}
 \end{figure}
 \clearpage
-\section{三角形一边的平行线}
+\section{梯形中的比例线段}
 \begin{model}
-    平行线分线段成比例有推论：平行与三角形的一边，并与其他两边(或两边延长线)相交的直线，所截得的三角形的三边与原三角形三边成比例。\\
-    如图，若$DE\px\px BC$，则有$\frac{AD}{AB}=\frac{AE}{AC}=\frac{DE}{BC}.$ \\
-    现证明$\frac{AD}{AB}=\frac{DE}{BC}$: \\
-    作$EF\px\px AB$交$BC$于$F$，易证四边形$BDEF$为平行四边形，$DE=BF$.\\
-    $DE \px \px BC \Rightarrow \frac{AD}{AB}=\frac{AE}{AC}$ \\
-    $EF \px \px AB \Rightarrow \frac{AE}{AC}=\frac{BF}{BC}=\frac{DE}{BC}$ \\
-    推论的逆定理：若一条直线截三角形的两边(或两边延长线)所得的对应线段成比例，则该直线平行于三角形的第三边。
-    如图，若$\frac{AD}{AB}=\frac{AE}{AC}$，则$DE \px \px BC.$ \\
-    根据比例的性质，若$\frac{AD}{DB}=\frac{AE}{EC}$，也能推出$DE \px \px BC.$ \\
-    但需要注意，若$\frac{AD}{AB}=\frac{DE}{BC}$，推不出$DE\px \px BC.$ \\
+    如图，梯形$ACFD$中，$AD\px \px BE\px \px CF$，有如下结论成立：\\
+    (1)$\frac{AB}{AC}=\frac{BE-AD}{CF-AD}=\frac{DE}{DF}$ \\
+    (2)$\frac{AB}{BC}=\frac{BE-AD}{CF-BE}=\frac{DE}{EF}$ \\
+    证明：过$D$作$AC$平行线交$BE$于$M$，交$CF$于$N$. \\
+    (1)$\frac{AB}{AC}=\frac{DE}{DF}=\frac{DM}{DN}=\frac{ME}{NF}=\frac{BE-AD}{CF-AD}$ \\
+    (2)$\frac{AB}{BC}=\frac{DE}{EF}=\frac{AB}{AC-AB}=\frac{BE-AD}{CF-AD-(BE-AD)}=\frac{BE-AD}{CF-BE}$
 \end{model}
 \begin{figure}[H]
 \centering
-\includegraphics[width=6cm]{picture/804.png}
-\caption{三角形一边的平行线}
+\includegraphics[width=4cm]{picture/808.png}
+\caption{梯形中的比例线段}
+\end{figure}
+\begin{problem}
+    如上图，用3种方法证明结论(1).\\
+    提示一：作$AM\perp BE,DN\perp BE$，作$BP \perp CF,EQ \perp CF$. \\
+    提示二：延长$AE$交$CF$于$G$. \\
+    提示三：延长$CA,FD$交于$G$.
+\end{problem}
+\begin{problem}
+    如图，梯形$ABCD,AD\px \px EG \px \px BC$，设$EF=x,FG=y$，求$y$与$x$的函数关系式，并写出定义域。\\
+\end{problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/851.png}
+\caption{练习图}
 \end{figure}
 \clearpage
 \section{三平行模型}
@@ -2275,15 +2343,15 @@ C & 16 & 42 \\
 \clearpage
 \section{三角形内接矩形}
 \begin{model}
-    如图，四边形$DEFG$为$\triangle ABC$的内接矩形，探究如下问题：\\
+    如图，四边形$DEFG$为$\triangle ABC$的内接矩形，$AM\perp BC$交$BC$于$M$，交$DG$于$N$，探究如下问题：\\
     (1)设$DG=x,DE=y$，探究$y$与$x$的函数关系式。\\
-    $\frac{DE}{AH}=\frac{BD}{BA},\frac{DG}{BC}=\frac{AD}{AB}$ \\
+    $\frac{DE}{AM}=\frac{BD}{BA},\frac{DG}{BC}=\frac{AD}{AB}$ \\
     $\frac{DE}{AH}+\frac{DG}{BC}=\frac{BD+AD}{AB}=1$ \\
-    $\frac{y}{AH}+\frac{x}{BC}=1$ \\
+    $\frac{y}{AM}+\frac{x}{BC}=1$ \\
     (2)探究矩形$DEFG$的面积最大值。\\
-    $S_{DEFG}=x·y=x·(-\frac{AH}{BC}·x+AH)=-\frac{AH}{BC}(x^2-BC·x+\frac{BC^2}{4})+\frac{AH·BC}{4}$ \\
-    $x=\frac{BC}{2}$时，即$DG$为$\triangle ABC$中位线时取得最大值，此时面积为$\frac{AH·BC}{4}$，为三角形面积的一半。\\
-    (3)若四边形$DEFG$为正方形，则边长为$\frac{BC·AH}{BC+AH}.$ \\
+    $S_{DEFG}=x·y=x·(-\frac{AM}{BC}·x+AM)=-\frac{AM}{BC}(x^2-BC·x+\frac{BC^2}{4})+\frac{AM·BC}{4}$ \\
+    $x=\frac{BC}{2}$时，即$DG$为$\triangle ABC$中位线时取得最大值，此时面积为$\frac{AM·BC}{4}$，为三角形面积的一半。\\
+    (3)若四边形$DEFG$为正方形，则边长为$\frac{BC·AM}{BC+AM}.$ \\
 \end{model}
 \begin{figure}[H]
 \centering
@@ -2334,7 +2402,7 @@ C & 16 & 42 \\
     先令中线$BE,CF$交于点$G$，延长$AG$交$BC$于点$D$，设$EF$与$AD$交于$H$\\
     $EF\px \px BC,EF=\frac{1}{2}BC \rightarrow BG=2GE,CG=2GF.$ \\
     $HE\px \px BD,BG=2GE \rightarrow BD=2HE.$ \\
-    $HE\px \px CD,AE=2AC \rightarrow CD=2HE.$ \\
+    $HE\px \px CD,AC=2AE \rightarrow CD=2HE.$ \\
     $BD=2HE=CD$，故$D$也为$BC$中点，命题得证。\\
 \end{knowledge}
 \begin{figure}[H]
@@ -2344,10 +2412,10 @@ C & 16 & 42 \\
 \end{figure}
 \begin{problem}
     下列结论中，正确的有：\\
-    如图1，若$G$为重心，$DE\px \px BC$，则$DE=\frac{2}{3}BC$. \\
-    如图2，若$G$为重心，则$S_{\triangle GBC}:S_{\triangle ABC}=1:9$. \\
-    如图3，若$G$为重心，$GE\perp BC,AF\perp BC$，则$GE:AF=1:3$. \\
-    如图4，若$G$为重心，$\triangle ABC$为等腰直角三角形，$GD\px \px AB$，则$DE:AB=1:3$. \\
+    如图(A)，若$G$为重心，$DE\px \px BC$，则$DE=\frac{2}{3}BC$. \\
+    如图(B)，若$G$为重心，则$S_{\triangle GBC}:S_{\triangle ABC}=1:9$. \\
+    如图(C)，若$G$为重心，$GE\perp BC,AF\perp BC$，则$GE:AF=1:3$. \\
+    如图(D)，若$G$为重心，$\triangle ABC$为等腰直角三角形，$GD\px \px AB$，则$DG:AB=1:3$. \\
 \end{problem}
 \begin{figure}[H]
 \centering
@@ -2372,42 +2440,9 @@ C & 16 & 42 \\
 \caption{练习图}
 \end{figure}
 \clearpage
-\section{梯形中的比例线段}
+\section{角平分线定理}
 \begin{model}
-    如图，梯形$ACFD$中，$AD\px \px BE\px \px CF$，有如下结论成立：\\
-    (1)$\frac{AB}{AC}=\frac{BE-AD}{CF-AD}=\frac{DE}{DF}$ \\
-    (2)$\frac{AB}{BC}=\frac{BE-AD}{CF-BE}=\frac{DE}{EF}$ \\
-    (3)若$E$为$AB$中点，则$F$也为$CD$中点。
-\end{model}
-\begin{figure}[H]
-\centering
-\includegraphics[width=3cm]{picture/808.png}
-\caption{梯形中的比例线段}
-\end{figure}
-\begin{model}
-    如图，梯形$ABCD$中，$AD\px\px BC,AD=a,BC=b$，有如下结论成立：\\
-    (1)$S_3=S_4$ \\
-    (2)$S_3·S_4=S_1·S_2$ \\
-    (3)$\frac{S_1}{S_2}=\frac{a^2}{b^2}$ \\
-    (4)$S_1:S_2:S_3:S_4:S_{ABCD}=a^2:b^2:ab:ab:(a+b)^2$
-\end{model}
-\begin{figure}[H]
-\centering
-\includegraphics[width=4cm]{picture/690.png}
-\caption{蝴蝶定理}
-\end{figure}
-\begin{problem}
-    如图，梯形$ABCD,AD\px \px EG \px \px BC$，设$EF=x,FG=y$，求$y$与$x$的函数关系式，并写出定义域。\\
-\end{problem}
-\begin{figure}[H]
-\centering
-\includegraphics[width=4cm]{picture/851.png}
-\caption{练习图}
-\end{figure}
-\clearpage
-\section{*角平分线定理}
-\begin{model}
-    如图，$AD$为$\triangle BAC$的内角平分线，则有$\frac{AB}{AC}=\frac{BM}{MC}.$ \\
+    如图，$AM$为$\triangle BAC$的内角平分线，则有$\frac{AB}{AC}=\frac{BM}{MC}.$ \\
     证明一：$\frac{AB}{AC}=\frac{S_{\triangle ABM}}{S_{\triangle ACM}}=\frac{BM}{MC}$. \\
     证明二：作$CN\px \px AB$交$AM$于$N$，易得$AC=NC$; \\
     $\frac{AB}{AC}=\frac{AB}{NC}=\frac{BM}{MC}.$
@@ -2419,7 +2454,7 @@ C & 16 & 42 \\
 \end{figure}
 \begin{problem}
     如图，$BD$为$\triangle ABC$的角平分线，点$E$位于边$BC$上，且$BD$是$BA$与$BE$的比例中项。求证：\\
-    (1)$\triangle CDE=\frac{1}{2}\triangle ABC$ \\
+    (1)$\angle CDE=\frac{1}{2}\angle ABC$ \\
     (2)$AD·CD=AB·CE$
 \end{problem}
 \begin{figure}[H]
@@ -2651,8 +2686,40 @@ C & 16 & 42 \\
 \end{figure}
 \clearpage
 \section{隐圆与相似}
+%\begin{knowledge}
+%    四点共圆的判定方法：\\
+%    (1)若四个点到一定点的距离相等，则这四个点共圆。\\
+%    (2)若一个四边形的一组对角的和等于180度，则这个四边形四个顶点共圆。\\
+%    (3)若一个四边形的一个外角等于它的内对角，则这个四边形四个顶点共圆。\\
+%    (4)若两个点在一条线段的同旁，并且和这条线段的两端连线所夹的角相等，那么这两点和这条线的两个端点共圆。
+%\end{knowledge}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=4cm]{picture/862.png}
+%\caption{四点共圆}
+%\end{figure}
+%\begin{knowledge}
+%    圆周角定理：一条弧所对的圆周角等于它所对的圆心角的一半，同弧或等弧所对的圆周角相等。如图，有$\angle BAC=\frac{1}{2}\angle BOC$.
+%\end{knowledge}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=6cm]{picture/864.png}
+%\caption{圆周角定理}
+%\end{figure}
+%\begin{knowledge}
+%    圆幂定理：交点为$P$的两条相交直线与圆$O$相交于$A,B$与$C,D$，则有$PA·PB=PC·PD$，证明方法：$\triangle PAD \sim \triangle PCB$
+%    或$\triangle PAC \sim \triangle PDB$. \\
+%    (1)相交弦定理：圆内的两条弦$AB,CD$交于$P$.\\
+%    (2)割线定理：从圆外一点$P$引圆的两条割线$AB,CD$.\\
+%    (3)切割线定理：从圆外一点$P$引圆的一条切线$PA(B)$和一条割线$CD$. \\
+%    (4)切线长定理：从圆外一点$P$引圆的两条切线$PA(B),PC(D)$，此时$PA(B)=PC(D)$.
+%\end{knowledge}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=8cm]{picture/863.png}
+%\caption{圆幂定理}
+%\end{figure}
 \begin{model}
-    对角互补的四边形四个顶点共圆。\\
     如图，在$\triangle ABC$中，$\angle ADE=\angle C$，则$D,E,C,B$四点共圆，$\triangle ADE \sim \triangle ACB.$ \\
     根据相似，有结论$AD·AB=AE·AC$成立(割线定理)。 \\
     特别的，若点$E$和点$C$重合，则$AC$为$\triangle BDC$外接圆的切线，有结论$AD·AB=AC^2$成立(切割线定理)。 \\
@@ -2667,7 +2734,7 @@ C & 16 & 42 \\
 \caption{反A字型}
 \end{figure}
 \begin{problem}
-    点$P$是$\triangle ABC$中$AB$边上一点，过点$P$作直线(不与直线$AB$重合)截$\triangle ABC$，使得到的三角形与原三角形相似，满足条件的直线最多有多少条？\\
+    点$P$是$\triangle ABC$中$AB$边上一点，过点$P$作直线(不与直线$AB$重合)截$\triangle ABC$，使得到的三角形与原三角形相似，满足条件的直线最多有多少条？
 \end{problem}
 \begin{problem}
     如图，$\triangle ABC$中，$AB=AC$，$\angle ADE=\angle B,\angle ADF=\angle C,EF$交$AD$于$G$. \\
@@ -2690,16 +2757,14 @@ C & 16 & 42 \\
 \caption{练习图}
 \end{figure}
 \begin{model}
-    共底边同侧的两个三角形顶角相等，则底边两点和两顶点四点共圆。\\
-    如图，$\angle ABD=\angle ACD$，图中有若干对相似三角形，如下：\\
-    (1)$\triangle AOB \sim \triangle DOC $ \\
-    (2)$\triangle AOD \sim \triangle BOC $ \\
-    (3)$\triangle PDB \sim \triangle PAC $ \\
-    (4)$\triangle PAD \sim \triangle PCB $ \\
+    如图，$\angle ABD=\angle ACD$，则$A,B,C,D$四点共圆，图中有若干对相似三角形，如下：\\
+    (1)$\triangle AOB \sim \triangle DOC (\angle ABO=\angle DCO, \angle AOB=\angle DOC)$ \\
+    (2)$\triangle AOD \sim \triangle BOC (\triangle AOB \sim \triangle DOC \Rightarrow \frac{AO}{BO}=\frac{DO}{CO}, \angle AOB=\angle DOC)$ \\
+    (3)$\triangle PDB \sim \triangle PAC (\angle DPB=\angle APC, \angle PBD=\angle PCA)$ \\
+    (4)$\triangle PAD \sim \triangle PCB (\triangle PDB \sim \triangle PAC \Rightarrow \frac{PA}{PC}=\frac{PD}{PB}, \angle APD=\angle CPB)$ \\
     根据相似，可以推出如下结论： \\
-    (1)割线定理：$PA·PB=PD·PC$ \\
-    (2)相交弦定理：$OA·OC=OB·OD$ \\
-    实际上，$A,B,C,D$四点共圆。\\
+    (1)$PA·PB=PD·PC$(割线定理) \\
+    (2)$OA·OC=OB·OD$(相交弦定理) \\
     根据同弧所对的圆周角相等，还可以推出如下结论：\\
     (1)$\angle ADB=\angle ACB$ \\
     (2)$\angle DAC=\angle DBC$ \\
@@ -2709,6 +2774,31 @@ C & 16 & 42 \\
 \centering
 \includegraphics[width=4cm]{picture/828.png}
 \caption{四点共圆图}
+\end{figure}
+\begin{example}
+    如图，正方形$ABCD$边长为$a$，$E,F$为$BC,CD$上两动点，且满足$\angle EAF=45^\circ$，连$BD$交$AE,AF$于$M,N$. \\
+    (1)写出所有与$\triangle AMN$相似的三角形 \\
+    (2)求证：$S_{\triangle AMN}=\frac{1}{2}S_{\triangle AFE}$ \\
+    (3)求证：$AE$平分$\angle BEF$，$AF$平分$\angle DFE$\\
+    解 \\
+    (1)$\triangle AMN \sim \triangle DMA \sim \triangle BAN \sim \triangle BME \sim \triangle DFN \sim \triangle AFE$ \\
+    反A字型：$\triangle AMN \sim \triangle DMA \sim \triangle BAN(\angle MAN=\angle MDA=\angle ABN,\angle AMN=\angle DMA,\angle ANM=\angle BNA)$ \\
+    蝴蝶型：$\triangle AMN \sim \triangle BME \sim \triangle DFN(\angle MAN=\angle MBE=\angle FDN,\angle AMN=\angle BME,\angle ANM=\angle DNF)$ \\
+    证明$\triangle AMN \sim \triangle AFE$ \\
+    $\triangle AMN\sim\triangle BME\Rightarrow\frac{AM}{BM}=\frac{MN}{ME}\Rightarrow\frac{AM}{NM}=\frac{MB}{ME},\angle AMB=\angle NME\Rightarrow\triangle AMB\sim\triangle NME\Rightarrow\angle MEN=\angle MBA=45^\circ$ \\
+    $\triangle AMN\sim\triangle DFN\Rightarrow\frac{AN}{DN}=\frac{MN}{FN}\Rightarrow\frac{AN}{MN}=\frac{ND}{NF},\angle AND=\angle MNF\Rightarrow\triangle AND\sim\triangle MNF\Rightarrow\angle NFM=\angle NDA=45^\circ$ \\
+    $\triangle ANE,\triangle AMF$均为等腰直角三角形，$\triangle ANE \sim \triangle AMF \Rightarrow \frac{AN}{AM}=\frac{AE}{AF} \Rightarrow \frac{AN}{AE}=\frac{AM}{AF},\angle MAN=\angle FAE\Rightarrow \triangle AMN \sim \triangle AFE$ \\
+    证明(2) \\
+    $\frac{S_{\triangle AMN}}{S_{\triangle AFE}}=\frac{AN^2}{AE^2}=\frac{1}{2}$ \\
+    证明(3) \\
+    $\triangle AFE \sim \triangle AMN \sim \triangle DFN \Rightarrow \angle AFE=\angle DFN$ \\
+    $\triangle AFE \sim \triangle AMN \sim \triangle BME \Rightarrow \angle AEF=\angle BEM$ \\
+    \\
+\end{example}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/6104.png}
+\caption{半角模型}
 \end{figure}
 \begin{problem}
     如图，$\triangle ABC$中，$DE,BC$的延长线交于$F$，且$EF·DF=BF·CF$. \\
@@ -2770,10 +2860,11 @@ C & 16 & 42 \\
 \clearpage
 \section{一线三等角}
 \begin{model}
-    如图，$\angle ABC=\angle CDE=\angle ACE$，有如下结论成立：\\
-    (1)$\triangle ABC\sim \triangle CDE$ \\
-    (2)$\frac{AB}{CD}=\frac{BC}{ED}=\frac{AC}{CE}$ \\
-    (3)$BC=CD \Leftrightarrow \triangle ABC \sim \triangle CDE \sim \triangle ACE$
+    如图，$\angle ABC=\angle CAE=\angle ADE$，有如下结论成立：\\
+    (1)$\triangle ABC\sim \triangle EDA$ \\
+    (2)$\frac{AB}{ED}=\frac{BC}{DA}=\frac{AC}{EA}$ \\
+    (3)$BA=AD \Leftrightarrow \triangle ABC \sim \triangle EAC \sim \triangle EDA$ \\
+    证明：$\frac{BC}{DA}=\frac{AC}{EA}\Rightarrow \frac{BC}{AC}=\frac{DA}{EA}=\frac{BA}{EA}$
 \end{model}
 \begin{figure}[H]
 \centering
@@ -2795,7 +2886,7 @@ C & 16 & 42 \\
     (3)当$\triangle DCE$为直角三角形时，求$BD$的长。
 \end{problem}
 \begin{problem}
-    如图，在$\triangle ABC$中，$AB=AC=5,BC=6,\angle DEF=\angle B,DE\perp AB$，当$D$在线段$AB$上运动时，
+    如图，在$\triangle ABC$中，$D$在线段$AB$上运动，$F$在线段$AC$上，$AB=AC=5,BC=6,\angle DEF=\angle B,DE\perp AB$，
     是否可能$S_{\triangle FCE}=4S_{\triangle EBD}$?若可能求出$BD$的长，若不可能，说明理由。
 \end{problem}
 \begin{figure}[H]
@@ -2803,13 +2894,28 @@ C & 16 & 42 \\
 \includegraphics[width=4cm]{picture/832.png}
 \caption{练习图}
 \end{figure}
+\begin{problem}
+    如图，$\triangle ABC,\triangle ADE$均为等边三角形，$AB=9,BD=3$. \\
+    (1)求$CF$的长；\\
+    (2)求$AD$的长；\\
+    (3)求$DF$的长。\\
+\end{problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/839.png}
+\caption{练习图}
+\end{figure}
+\begin{problem}
+    如上图，$\triangle ABC$为边长为1的等边三角形，$D$是线段$BC$上一个动点(不含端点)，$F$是线段$AC$上的点，且$\angle ADF=60^\circ$，求$CF$的最大值。
+\end{problem}
 \clearpage
 \section{旋转相似}
 \begin{model}
     如图，$\triangle ABC\sim \triangle ADE \Leftrightarrow \triangle ABD \sim \triangle ACE$. \\
-    该模型可以看作将$\triangle ABC$绕着点$A$旋转一定角度，再进行放缩得到$\triangle ADE$，$D$为$B$的对应点，$E$为$C$的对应点。\\
+    $\triangle ABC\sim \triangle ADE$可以看作将$\triangle ABC$绕着点$A$旋转一定角度$(\angle BAD=\angle CAE)$，再进行放缩$\frac{AD}{AB}=\frac{AE}{AC}$倍得到$\triangle ADE$，$D$为$B$的对应点，$E$为$C$的对应点。\\
+    $\triangle ABD\sim \triangle ACE$可以看作将$\triangle ABD$绕着点$A$旋转一定角度$(\angle BAC=\angle DAE)$，再进行放缩$\frac{AC}{AB}=\frac{AE}{AD}$倍得到$\triangle ACE$，$C$为$B$的对应点，$E$为$D$的对应点。\\
     $\triangle ABC\sim \triangle ADE \Rightarrow \frac{AB}{AD}=\frac{AC}{AE} \Rightarrow \frac{AB}{AC}=\frac{AD}{AE},\angle BAD=\angle CAE \Rightarrow \triangle ABD \sim \triangle ACE.$ \\
-    $\triangle ABD\sim \triangle ACE \Rightarrow \frac{AB}{AC}=\frac{AD}{AE} \Rightarrow \frac{AB}{AD}=\frac{AC}{AE},\angle BAC=\angle EAD \Rightarrow \triangle ABC \sim \triangle ADE.$
+    $\triangle ABD\sim \triangle ACE \Rightarrow \frac{AB}{AC}=\frac{AD}{AE} \Rightarrow \frac{AB}{AD}=\frac{AC}{AE},\angle BAC=\angle DAE \Rightarrow \triangle ABC \sim \triangle ADE.$
 \end{model}
 \begin{figure}[H]
 \centering
@@ -2821,7 +2927,7 @@ C & 16 & 42 \\
 \end{problem}
 \begin{figure}[H]
 \centering
-\includegraphics[width=4cm]{picture/856.png}
+\includegraphics[width=3cm]{picture/856.png}
 \caption{练习图}
 \end{figure}
 \begin{problem}
@@ -2834,14 +2940,36 @@ C & 16 & 42 \\
 \includegraphics[width=4cm]{picture/845.png}
 \caption{练习图}
 \end{figure}
+\begin{problem}
+    如图，$Rt\triangle ABC$中，$\angle ACB=90^\circ,AB=5,BC=3$，点$D$是斜边$AB$上任意一点，联结$DC$，过点$C$作$CE\perp CD$，
+    垂足为点$C$，联结$DE$，使得$\angle EDC=\angle A$，联结$BE$. \\
+    (1)求证：$AC·BE=BC·AD$; \\
+    (2)设$AD=x$，四边形$BDCE$面积为$S$，求$S$与$x$之间的函数关系式及$x$的取值范围。
+\end{problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/861.png}
+\caption{练习图}
+\end{figure}
+\begin{problem}
+    如图，在$\triangle ABC$中，$AB=AC,AE=BE,AD=CD,DF\perp AC$. \\
+    (1)求证：$AD^2=DG·BD$ \\
+    (2)求证：$\triangle BCE \sim \triangle GCD$ \\
+    (3)求证：$\triangle BCG \sim \triangle ECD$
+\end{problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/865.png}
+\caption{练习图}
+\end{figure}
 \clearpage
 \section{射影定理}
 \begin{model}
     如图，$\triangle CAB,\angle ACB=90^\circ,CD\perp AB$交$AB$于点$D$，有如下结论成立：\\
-    (1)$\triangle ACD \sim \triangle ABC \sim \triangle CBD $ \\
-    (2)$AC^2 = AD·AB$ \\
-    (3)$BC^2 = BD·BA$ \\
-    (4)$CD^2 = AD·BD$ \\
+    (1)$\triangle ACD \sim \triangle ABC \sim \triangle CBD$ \\
+    (2)$AC^2 = AD·AB(\triangle ACD \sim \triangle ABC)$ \\
+    (3)$BC^2 = BD·BA(\triangle ABC \sim \triangle CBD)$ \\
+    (4)$CD^2 = AD·BD(\triangle ACD \sim \triangle CBD)$ \\
     (5)$\frac{AC^2}{BC^2}=\frac{AD}{BD}$ \\
     (6)$CD·AB = AC·BC$
 \end{model}
@@ -2856,53 +2984,6 @@ C & 16 & 42 \\
 \begin{figure}[H]
 \centering
 \includegraphics[width=4cm]{picture/813.png}
-\caption{练习图}
-\end{figure}
-\clearpage
-\section{经典模型中的相似}
-\begin{model}
-    如图，正方形$ABCD$边长为$a$，$E,F$为$BC,CD$上两动点，且满足$\angle EAF=45^\circ$，连$BD$交$AE,AF$于$M,N$，有如下结论成立：\\
-    (1)$BE+DF=EF$ \\
-    (2)$BM^2+ND^2=MN^2$ \\
-    (3)$AE$平分$\angle BEF$，$AF$平分$\angle DFE$ \\
-    (4)$A$到$EF$距离为定值$a$ \\
-    (5)$\triangle ECF$周长为定值$2a$ \\
-    (6)$\triangle ANE,\triangle AMF$为等腰直角三角形 \\
-    (7)$\triangle ANM \sim \triangle AEF \sim \triangle DNF \sim \triangle BEM \sim \triangle DAM \sim \triangle BNA$ \\
-    $\Rightarrow \frac{S_{\triangle AMN}}{S_{\triangle AEF}}=\frac{1}{2}$ \\
-    $\Rightarrow AM^2=MD·MN$ \\
-    $\Rightarrow AN^2=NB·NM$ \\
-    (8)$BE=DF$时，$\triangle CEF$面积最大
-\end{model}
-\begin{figure}[H]
-\centering
-\includegraphics[width=4cm]{picture/6104.png}
-\caption{半角模型}
-\end{figure}
-\clearpage
-\begin{model}
-    如图，菱形$ABCD$中，$\angle B=60^\circ,E,F$为$BC,CD$上的动点，且满足$\angle EAF=60^\circ$.设$AB=a$，有如下结论成立：\\
-    (1)$\triangle AEB \backcong \triangle AFC \sim \triangle AGF \sim \triangle EGC$ \\
-    (2)$\triangle AEC \backcong \triangle AFD \sim \triangle AGE \sim \triangle FGC$ \\
-    (3)$\triangle EAF$为等边三角形 \\
-    (4)四边形$AECF$的面积为$\frac{\sqrt3}{4}a^2$ \\
-    (5)菱形的面积为$\frac{\sqrt3}{2}a^2$ \\
-    (6)$AC=a,BD=\sqrt3a$
-\end{model}
-\begin{figure}[H]
-\centering
-\includegraphics[width=4cm]{picture/608.png}
-\caption{含60度角的菱形}
-\end{figure}
-\begin{problem}
-    如图，$\triangle ABC,\triangle ADE$均为等边三角形，$AB=9,BD=3$. \\
-    (1)求$CF$的长；\\
-    (2)求$AD$的长；\\
-    (3)求$DF$的长。\\
-\end{problem}
-\begin{figure}[H]
-\centering
-\includegraphics[width=4cm]{picture/839.png}
 \caption{练习图}
 \end{figure}
 \clearpage
@@ -2942,8 +3023,8 @@ C & 16 & 42 \\
     (3)$\overrightarrow{GA}+\overrightarrow{GB}+\overrightarrow{GC}=\vec{0}$
 \end{knowledge}
 \clearpage
-\chapter{锐角三角比}
-\section{锐角三角比及其性质}
+\chapter{锐角的三角比}
+\section{锐角的三角比及其性质}
 \begin{knowledge}
     如图，$\triangle ACB,\angle C=90^\circ$. \\
     正弦：$\sin A=\frac{a}{c}$ \\
@@ -2967,13 +3048,13 @@ C & 16 & 42 \\
 \caption{锐角三角比}
 \end{figure}
 \clearpage
-\section{特殊三角比}
+\section{特殊角的三角比}
 \begin{knowledge}
     特殊三角比如下表所示，其中$15^\circ,22.5^\circ,75^\circ$只作了解：
 \end{knowledge}
 \begin{table}[H]
 \centering
-\caption{特殊的锐角三角比}
+\caption{特殊角的三角比}
 \begin{tabular}{l|l|l|l|l|l|l|l|l}
 \hline
 \hline
@@ -3049,6 +3130,33 @@ $\cot A$ & $\times$ & $\sqrt3$ & 1 & $\frac{\sqrt3}{3}$ & 0 & $2+\sqrt 3 $ & $\s
 \caption{坡角和坡度}
 \end{figure}
 \clearpage
+\section{*直线斜率与倾斜角正切值}
+\begin{knowledge}
+    直线$y=kx+b$上有两点$A(x_1,y_1),B(x_2,y_2)$，$k$称作直线的斜率，$x$轴正轴与直线向上方向的夹角记作$\alpha(0^\circ \le \alpha < 180^\circ,\alpha \ne 90^\circ)$，称作直线的倾斜角，
+    探究$\alpha$与$k$的关系：\\
+    $k=\frac{y_1-y_2}{x_1-x_2}=\frac{\Delta y}{\Delta x}=\tan \alpha$ \\
+    当$\alpha=90^\circ$时，直线垂直于$y$轴，$y_1=y_2$，此时$k=0,\tan \alpha=0$;\\
+    当$0^\circ<\alpha<90^\circ$时，$k>0,\tan \alpha>0$; \\
+    当$90^\circ<\alpha<180^\circ$时，$k<0,\tan \alpha<0$; \\
+    注意：当$\alpha=90^\circ$时，直线垂直于$x$轴，$x_1=x_2$，此时$k$不存在，$\tan \alpha$也不存在。\\
+    总结：倾斜角不是$90^\circ$的直线，其倾斜角的正切值叫做这条直线的斜率，垂直于$x$轴的直线斜率不存在。\\
+    特别的，若直线$y=k_1x+b_1$与直线$y=k_2x+b_2$垂直(假设$k_1>0,k_2<0)$，倾斜角分别为$\alpha,\beta$，
+    则有$\beta = 90^\circ + \alpha$.
+    给出公式$\tan(90^\circ+\alpha)=\cot \alpha$，则有$k_1·k_2=\tan\alpha·\tan\beta=\tan\alpha·\tan(90^\circ+\alpha)=-\tan\alpha·\cot\alpha=-1$.
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/907.png}
+\caption{直线斜率与倾斜角正切值}
+\end{figure}
+\begin{knowledge}
+    现推导点到直线距离公式：假设直线$y=kx+b$，直线的倾斜角为$\alpha$，有点$P(x_1,y_1)$，则点$P$到直线的距离$d=\frac{|kx_1-y_1+b|}{\sqrt{1+k^2}}$. \\
+    证明：将直线平移，使其经过点$A$，则平移后的直线解析式为$y=k(x-x_1)+y_1$，设平移前的直线与$x$轴的交点坐标为$A(-\frac{b}{k},0)$，
+    平移后的直线与$x$轴的交点坐标为$B(\frac{kx_1-y_1}{k},0)$，两条直线的距离则为$AB·\sin \alpha$或$AB·\sin(180^\circ-\alpha)$. \\
+    当$0^\circ \le \alpha < 180 ^\circ$时，$\sin \alpha = \sin(180^\circ-\alpha)$，故$d=|\frac{kx_1-y_1+b}{k}|·\sin \alpha$. \\
+    由$\tan \alpha = k $，推出$\sin \alpha = \frac{|k|}{\sqrt{1+k^2}}$，所以$d=\frac{|kx_1-y_1+b|}{\sqrt{1+k^2}}$.
+\end{knowledge}
+\clearpage
 \section{*正弦定理和余弦定理}
 \begin{knowledge}
     在$\triangle ABC$中，$a,b,c$分别为$\angle A,\angle B,\angle C$的对边，$R$为$\triangle ABC$外接圆的半径。 \\
@@ -3074,11 +3182,17 @@ $\cot A$ & $\times$ & $\sqrt3$ & 1 & $\frac{\sqrt3}{3}$ & 0 & $2+\sqrt 3 $ & $\s
 \caption{共角定理}
 \end{figure}
 \clearpage
-\section{*45度角模型}
+\section{*正切两角和差公式与45度角模型}
+\begin{knowledge}
+    高中会学习正切的两角和差公式：$\tan(\alpha\pm\beta)=\frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha·\tan \beta}$ \\
+    现利用该公式总结如下结论：将一次函数$y=kx+b$绕某点旋转$45^\circ$: \\
+    若为顺时针旋转，则旋转后的直线斜率为$\frac{k-1}{k+1}$; \\
+    若为逆时针旋转，则旋转后的直线斜率为$\frac{1+k}{1-k}$.
+\end{knowledge}
 \begin{knowledge}
     如图，$\triangle ABC$三个顶点都在网格线上，假设每个小正方形边长为1，则$AC=\sqrt5,BC=\sqrt5,AC=\sqrt{10},\triangle ABC$为等腰直角三角形。\\
     $\angle ABC=45^\circ$由一个正切值为$\frac{1}{2}$和一个正切值为$\frac{1}{3}$的角组成。\\
-    高中会学习正切的两角和公式：$\tan(\alpha+\beta)=\frac{\tan \alpha+\tan \beta}{1-\tan \alpha·\tan \beta}$ \\
+    使用两角和正切公式求出$\angle ABC$的正切值如下：\\
     $\tan \angle ABC=\frac{\frac{1}{2}+\frac{1}{3}}{1-\frac{1}{2}·\frac{1}{3}}=1$ \\
 \end{knowledge}
 \begin{figure}[H]
@@ -3088,7 +3202,7 @@ $\cot A$ & $\times$ & $\sqrt3$ & 1 & $\frac{\sqrt3}{3}$ & 0 & $2+\sqrt 3 $ & $\s
 \end{figure}
 \clearpage
 \chapter{二次函数}
-\section{二次函数解析式}
+\section{二次函数的解析式}
 \begin{knowledge}
     形如$y=ax^2+bx+c(a\ne 0)$的函数叫做二次函数。
 \end{knowledge}
@@ -3114,15 +3228,15 @@ $\cot A$ & $\times$ & $\sqrt3$ & 1 & $\frac{\sqrt3}{3}$ & 0 & $2+\sqrt 3 $ & $\s
 \begin{knowledge}
     通常，这四种表达形式可以互相转化：\\
     一般式与顶点式的互化：
-    $y=ax^2+bx+c \Rightarrow y=a(x+\frac{2b}{a})^2+\frac{4ac-b^2}{4a}$ \\
+    $y=ax^2+bx+c \Rightarrow y=a(x+\frac{b}{2a})^2+\frac{4ac-b^2}{4a}$ \\
     $y=a(x-h)^2+k \Rightarrow y=ax^2-2ahx+ah^2+k$ \\
     两根式化为一般式：\\
     $y=a(x-x_1)(x-x_2) \Rightarrow y=ax^2-a(x_1+x_2)x+ax_1x_2$ \\
-    对比各项系数，可以得到根与系数的关系：\\
+    对比各项系数，可以得到根与系数的关系(韦达定理)：\\
     $x_1+x_2=-\frac{b}{a},x_1x_2=\frac{c}{a}$.
 \end{knowledge}
 \clearpage
-\section{二次函数图像与性质}
+\section{二次函数的图像与性质}
 \begin{knowledge}
     二次函数$y=ax^2+bx+c(a\ne 0)$中各系数对图像的影响：
 \end{knowledge}
@@ -3137,12 +3251,13 @@ $\cot A$ & $\times$ & $\sqrt3$ & 1 & $\frac{\sqrt3}{3}$ & 0 & $2+\sqrt 3 $ & $\s
 $a$ & 开口大小和方向，对称轴 & $|a|$越大，开口越窄；$|a|$越小，开口越宽；$a>0$开口向上；$a<0$开口向下。 \\
 $b$ & 对称轴 & 左同右异：$a,b$异号，对称轴在$y$轴右侧；$a,b$同号，对称轴在$y$轴左侧；$b=0\Leftrightarrow$对称轴为$y$轴。 \\
 $c$ & 与$y$轴交点纵坐标 & 与$y$轴交于点$(0,c)$，$c=0\Leftrightarrow$ 图像经过原点。 \\
-$\Delta=b^2-4ac$ & 与$x$轴交点 & $\Delta>0$，与$x$轴无交点；$\Delta=0$，与$x$轴一个交点；$\Delta<0$，与$x$轴俩交点。\\
+$\Delta=b^2-4ac$ & 与$x$轴交点 & $\Delta<0$，与$x$轴无交点；$\Delta=0$，与$x$轴一个交点；$\Delta>0$，与$x$轴两个交点。\\
 \hline
 \hline
 \end{tabular}
 \end{table}
 \begin{knowledge}
+    二次函数的对称轴与顶点 \\
     二次函数的对称轴：\\
     一般式：$y=ax^2+bx+c(a\ne 0)$ 对称轴为直线$x=-\frac{b}{2a}$ \\
     顶点式：$y=a(x-h)^2+k(a\ne 0)$ 对称轴为直线$x=h$ \\
@@ -3150,7 +3265,8 @@ $\Delta=b^2-4ac$ & 与$x$轴交点 & $\Delta>0$，与$x$轴无交点；$\Delta=0
     已知一点$(x_1,y_1)$求其关于对称轴直线$x=h$的对称点：$(2h-x_1,y_1)$ \\
     二次函数的顶点： \\
     一般式：$y=ax^2+bx+c(a\ne 0)$ 顶点为$(-\frac{b}{2a},\frac{4ac-b^2}{4a})$ \\
-    顶点式：$y=a(x-h)^2+k(a\ne 0)$ 顶点为$(h,k)$
+    顶点式：$y=a(x-h)^2+k(a\ne 0)$ 顶点为$(h,k)$ \\
+    交点式：$y=a(x-x_1)(x-x_2)$ 顶点为$(\frac{x_1+x_2}{2},-\frac{a(x_1-x_2)^2}{4})$
 \end{knowledge}
 \begin{knowledge}
     二次函数的图像与性质：\\
@@ -3179,8 +3295,14 @@ $\Delta=b^2-4ac$ & 与$x$轴交点 & $\Delta>0$，与$x$轴无交点；$\Delta=0
 \hline
 \end{tabular}
 \end{table}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{picture/1006.png}
+\caption{决策树}
+\end{figure}
 \begin{knowledge}
-    已知二次函数$y=ax^2+bx+c(a\ne 0)$上两点$(x_1,y_1),(x_2,y_2)(x_1\ne x_2)$，对称轴为直线$x=h$，比较$y_1$和$y_2$的大小如下表所示：
+    已知二次函数$y=ax^2+bx+c(a\ne 0)$上两点$(x_1,y_1),(x_2,y_2)(x_1 < x_2)$，对称轴为直线$x=h$，比较$y_1$和$y_2$的大小有口诀：$a>0$，离对称轴越远，函数值越大；$a<0$，离对称轴越远，函数值越小。\\
+    具体分类讨论情况如下表所示：
 \end{knowledge}
 \begin{table}[H]
 \centering
@@ -3202,11 +3324,11 @@ $a<0, h < x_1$ & $y_1>y_2$ \\
 \end{tabular}
 \end{table}
 \clearpage
-\section{二次函数图像变换}
+\section{二次函数的图像变换}
 \begin{knowledge}
     二次函数图像的平移口诀：左加右减自变量，上加下减常数项。 \\
     任意两个二次函数，只要$a$相同，都能互相通过平移而转换。\\
-    例如：$y=a^2$通过平移得到$y=ax^2+bx+c$，只需要向左(右)平移$|\frac{2b}{a}|$个单位，再向上(下)平移$|\frac{4ac-b^2}{4a}|$个单位。\\
+    例如：$y=ax^2$通过平移得到$y=ax^2+bx+c$，只需要向左(右)平移$|\frac{b}{2a}|$个单位，再向上(下)平移$|\frac{4ac-b^2}{4a}|$个单位。\\
     二次函数沿某个方向平移$m(m>0)$个单位后的解析式如下表所示：
 \end{knowledge}
 \begin{table}[H]
@@ -3272,8 +3394,14 @@ $a<0, h < m$ & $f(n)$ & $f(m)$ \\
     对于不同的题目描述方法，转化为最值问题：\\
     图像与$x$轴无交点$\Rightarrow b^2-4ac<0$ \\
     二次函数的函数值恒为负/图像在$x$轴下方$\Rightarrow a<0, b^2-4ac < 0$ \\
-    二次函数的函数值恒为正/图像在$x$轴上方$\Rightarrow a>0, b^2-4ac < 0$ \\
+    二次函数的函数值恒为正/图像在$x$轴上方$\Rightarrow a>0, b^2-4ac < 0$
 \end{knowledge}
+\begin{problem}
+    $\sqrt{kx^2+4x+3}$的$x$取值范围为全体实数，求$k$的取值范围。
+\end{problem}
+\begin{problem}
+    $\frac{1}{kx^2+4x+3}$的$x$取值范围为全体实数，求$k$的取值范围。
+\end{problem}
 \clearpage
 \section{二次函数与方程不等式}
 \begin{knowledge}
@@ -3297,7 +3425,22 @@ $ax^2+bx+c<0(a>0)$ & $x_1<x<x_2(x_1<x_2)$ & 无实数解 & 无实数解 \\
 \end{tabular}
 \end{table}
 \clearpage
-\section{二次函数与角平分线}
+\section{*二次函数与直线型}
+\begin{knowledge}
+    判断其交点情况二次函数$y=ax^2+bx+c(a \ne 0)$与一次函数$y=mx+n(m \ne 0)$交点情况 \\
+    联立$ax^2+bx+c=mx+n$，整理得$ax^2+(b-m)x+(c-n)=0,\Delta=(b-m)^2-4a(c-n)$. \\
+    $\Delta > 0 \Rightarrow$ 有两个交点 \\
+    $\Delta = 0 \Rightarrow$ 有一个交点(相切) \\
+    $\Delta < 0 \Rightarrow$ 没有交点 \\
+    二次函数$y=ax^2+bx+c(a \ne 0)$还与直线$y=\frac{4ac-b^2}{4ac}$相切，切点为顶点。
+\end{knowledge}
+\begin{knowledge}
+    二次函数$y=ax^2+bx+c(a \ne 0)$与一次函数$y=mx+n(m \ne 0)$相切于点$(x_0,y_0)$时的直线斜率$m=2ax_0+b$ \\
+    联立$ax^2+bx+c=mx+n$，整理得$ax^2+(b-m)x+(c-n)=0,\Delta=(b-m)^2-4a(c-n)$. \\
+    因为$\Delta=(b-m)^2-4a(c-n)=0$，解得$x_0=\frac{m-b}{2a}$，故$m=2ax_0+b$ \\
+\end{knowledge}
+\clearpage
+\section{*二次函数与角平分线}
 \begin{model}
     如图，不平行于$x$轴的直线$EQF$与抛物线$y=ax^2$交于$E,F$两点，在$y$轴上找一点$P$，使得$y$轴平分$\angle EPF$. \\
     设$E(x_1,y_1),F(x_2,y_2),Q(0,y_3)$，则$P$点坐标为$(0,-y_3)$. \\
@@ -3355,81 +3498,520 @@ $ax^2+bx+c<0(a>0)$ & $x_1<x<x_2(x_1<x_2)$ & 无实数解 & 无实数解 \\
 \caption{抛物线与直角梯形}
 \end{figure}
 \clearpage
-\section{二次函数50问}
-\begin{example}
-    如图，点$A,B,C$为二次函数$y=x^2+bx+c$与坐标轴的交点，$OA=OC=3$，顶点为$D$. \\
-    (1)求二次函数的解析式。 \\
-    (2)判断$\triangle ACD$的形状，并说明理由。 \\
-    (3)求四边形$ABCD$的面积。 \\
-    (4)在对称轴上找一点$P$，使得$\triangle BCP$周长最小，求出$P$点坐标及$\triangle BCP$的周长。 \\
-    (5)在直线$AC$下方的抛物线上有一点$N$，过点$N$作直线$l\px\px y$轴，交$AC$于点$M$，当点$N$坐标为何值时，线段$MN$的长度最大？并求出最大值。\\
-    (6)在直线$AC$下方的抛物线上，是否存在点$N$使得$\triangle ACN$面积最大？并求出最大面积。 \\
-    (7)在直线$AC$下方的抛物线上，是否存在点$N$使得四边形$ABCN$面积最大？并求出最大面积。 \\
-    (8)在$y$轴上存在点$E$，使得$\triangle ADE$为直角三角形，求出所有点$E$的坐标。 \\
-    (9)在$y$轴上存在点$F$，使得$\triangle ADF$为直角三角形，求出所有点$F$的坐标。 \\
-    (10)在抛物线上存在点$N$，使得$S_{\triangle ABN}=S_{\triangle ABC}$，求出所有点$N$的坐标。 \\
-    (11)在抛物线上存在点$H$，使得$S_{\triangle BCH}=S_{\triangle ABC}$，求出所有点$H$的坐标。 \\
-    (12)在抛物线上存在点$Q$，使得$S_{\triangle AOQ}=S_{\triangle COQ}$，求出所有点$Q$的坐标。 \\
-    (13)在抛物线上存在一点$E$，使得$BE$平分$\triangle ABC$的面积，求出点$E$的坐标。 \\
-    (14)在抛物线上存在一点$F$，作$FM\perp x$轴交$AC$于$H$，$AC$平分$\triangle AFM$的面积。 \\
-    (15)在抛物线对称轴上有一点$K$，抛物线上有一点$L$，若以$A,B,K,L$为顶点的四边形是平行四边形，求出所有可能的$K,L$两点坐标。\\
-    (16)作垂直于$x$轴的直线$x=-1$交直线$AC$于点$M$，交抛物线于点$N$，若以$A,M,N,E$为顶点的四边形是平行四边形，求点$E$的坐标。 \\
-    (17)在抛物线上存在点$P$，使得$\angle POC=\angle PCO$，求出所有的点$P$的坐标。 \\
-    (18)在线段$AC$上存在点$M$，使得$\triangle AOM \sim \triangle ABC$，求出所有的点$M$的坐标。 \\
-    (19)抛物线上存在点$E$，作$EH\perp x$轴于$H$，若$\triangle EAH$与$\triangle OBC$相似，求点$E$的坐标。 \\
-    (20)若点$P$以单位速度自$A$向$B$运动，点$Q$以同速自$O$向$C$运动。当某一点到达终点时，另一点也停止运动，设运动时间为t，$\triangle OPQ$面积为
-    S，求$S$与$t$之间的函数关系式，并求出$S$的最大值。\\
-    (21)动点$E$在$y$轴上，动点$F$在坐标平面内，且$A,D,E,F$构成菱形，求出点$E,F$的坐标。 \\
-    (22)动点$E$在$y$轴上，动点$F$在坐标平面内，且$A,D,E,F$构成矩形，求出点$E,F$的坐标。 \\
-    (23)点$P$为抛物线对称轴上一点，且使得$|PA-PC|$值最大，求出点$P$的坐标和$|PA-PC|$的最大值。 \\
-    (24)在直线$AC$下方的抛物线上存在一点$P$使得$P$到直线$AC$的距离最大，求出点$P$的坐标。 \\
-    (25)在直线$AC$下方的抛物线上存在一点$P$使得$P$到直线$AC$的距离为$\sqrt2$，求出点$P$的坐标。 \\
-    (26)在直线$AD$上，存在一点$P$使得$BP+CP$最小，求点$P$的坐标。 \\
-    (27)在直线$AC$上，存在一点$P$使得$BP+\frac{\sqrt3}{2}CP$最小，求点$P$的坐标和最小值。\\
-    (28)点$E$是线段$AC$上一动点，点$P$是线段$AB$上一动点，$PE\px \px BC$，若$P$点使得$\triangle PEC$面积最大，求出点$P$的坐标和面积的最大值。\\
-    (29)点$P$是直线$AC$下方抛物线上一个动点，过点$P$作$PE\perp x$轴交$AC$于点$E$，$PF\perp AC$于点$F$。求点$P$，使得$\triangle PEF$周长最大。\\
-    (30)判断点$O$关于直线$AC$的对称点是否在抛物线上。\\
-    (31)动点$E$在坐标轴上，若$\triangle ACE$为直角三角形，求点$E$所有可能的坐标。 \\
-    (32)动点$E$在坐标轴上，动点$P$在坐标平面内，$A,C,P,E$四点构成正方形顶点，求点$P$所有可能的坐标。\\
-    (33)对称轴交$x$轴于点$E$，以$E$为圆心，$\frac{3\sqrt{10}}{5}$为半径作圆，判断直线$BC$与圆的位置关系。\\
-    (34)动点$P$在直线$AC$上，动点$M$在抛物线上，且$PM\px \px AB$，$P,M,A,B$构成平行四边形，求点$P$的坐标。\\
-    (35)对称轴交$x$轴于点$E$，动点$M$在$x$轴上，动点$P$在抛物线上，且$PM\px\px ED$，$P,M,E,D$构成平行四边形，求点$P$的坐标。\\
-    (36)动点$M$在$x$轴上，动点$P$在抛物线上，且$PM \px\px AC$，$P,M,A,C$构成平行四边形，求$P$点坐标。\\
-    (37)已知点$F(-1,-\frac{15}{4})$，求证：$PD=PF$. \\
-    (38)已知点$F(-1,-\frac{15}{4})$，$\triangle PDF$是等边三角形，求点$P$的坐标。\\
-    (39)已知点$E(\frac{1}{2},2)$，求$PD+PE$的最小值。\\
-    (40)点$F$为平面内一定点，且$PD=PF$，求点$F$的坐标。\\
-    (41)
-    (42)
-    (43)
-    (44)
-    (45)
-    (46)
-    (47)
-    (48)
-    (49)
-    (50)
-\end{example}
+%\section{二次函数50问}
+%\begin{example}
+%    如图，点$A,B,C$为二次函数$y=x^2+bx+c$与坐标轴的交点，$OA=OC=3$，顶点为$D$. \\
+%    (1)求二次函数的解析式。 \\
+%    (2)判断$\triangle ACD$的形状，并说明理由。 \\
+%    (3)求四边形$ABCD$的面积。 \\
+%    (4)在对称轴上找一点$P$，使得$\triangle BCP$周长最小，求出$P$点坐标及$\triangle BCP$的周长。 \\
+%    (5)在直线$AC$下方的抛物线上有一点$N$，过点$N$作直线$l\px\px y$轴，交$AC$于点$M$，当点$N$坐标为何值时，线段$MN$的长度最大？并求出最大值。\\
+%    (6)在直线$AC$下方的抛物线上，是否存在点$N$使得$\triangle ACN$面积最大？并求出最大面积。 \\
+%    (7)在直线$AC$下方的抛物线上，是否存在点$N$使得四边形$ABCN$面积最大？并求出最大面积。 \\
+%    (8)在$y$轴上存在点$E$，使得$\triangle ADE$为直角三角形，求出所有点$E$的坐标。 \\
+%    (9)在$y$轴上存在点$F$，使得$\triangle ADF$为直角三角形，求出所有点$F$的坐标。 \\
+%    (10)在抛物线上存在点$N$，使得$S_{\triangle ABN}=S_{\triangle ABC}$，求出所有点$N$的坐标。 \\
+%    (11)在抛物线上存在点$H$，使得$S_{\triangle BCH}=S_{\triangle ABC}$，求出所有点$H$的坐标。 \\
+%    (12)在抛物线上存在点$Q$，使得$S_{\triangle AOQ}=S_{\triangle COQ}$，求出所有点$Q$的坐标。 \\
+%    (13)在抛物线上存在一点$E$，使得$BE$平分$\triangle ABC$的面积，求出点$E$的坐标。 \\
+%    (14)在抛物线上存在一点$F$，作$FM\perp x$轴交$AC$于$H$，$AC$平分$\triangle AFM$的面积。 \\
+%    (15)在抛物线对称轴上有一点$K$，抛物线上有一点$L$，若以$A,B,K,L$为顶点的四边形是平行四边形，求出所有可能的$K,L$两点坐标。\\
+%    (16)作垂直于$x$轴的直线$x=-1$交直线$AC$于点$M$，交抛物线于点$N$，若以$A,M,N,E$为顶点的四边形是平行四边形，求点$E$的坐标。 \\
+%    (17)在抛物线上存在点$P$，使得$\angle POC=\angle PCO$，求出所有的点$P$的坐标。 \\
+%    (18)在线段$AC$上存在点$M$，使得$\triangle AOM \sim \triangle ABC$，求出所有的点$M$的坐标。 \\
+%    (19)抛物线上存在点$E$，作$EH\perp x$轴于$H$，若$\triangle EAH$与$\triangle OBC$相似，求点$E$的坐标。 \\
+%    (20)若点$P$以单位速度自$A$向$B$运动，点$Q$以同速自$O$向$C$运动。当某一点到达终点时，另一点也停止运动，设运动时间为t，$\triangle OPQ$面积为
+%    S，求$S$与$t$之间的函数关系式，并求出$S$的最大值。\\
+%    (21)动点$E$在$y$轴上，动点$F$在坐标平面内，且$A,D,E,F$构成菱形，求出点$E,F$的坐标。 \\
+%    (22)动点$E$在$y$轴上，动点$F$在坐标平面内，且$A,D,E,F$构成矩形，求出点$E,F$的坐标。 \\
+%    (23)点$P$为抛物线对称轴上一点，且使得$|PA-PC|$值最大，求出点$P$的坐标和$|PA-PC|$的最大值。 \\
+%    (24)在直线$AC$下方的抛物线上存在一点$P$使得$P$到直线$AC$的距离最大，求出点$P$的坐标。 \\
+%    (25)在直线$AC$下方的抛物线上存在一点$P$使得$P$到直线$AC$的距离为$\sqrt2$，求出点$P$的坐标。 \\
+%    (26)在直线$AD$上，存在一点$P$使得$BP+CP$最小，求点$P$的坐标。 \\
+%    (27)在直线$AC$上，存在一点$P$使得$BP+\frac{\sqrt3}{2}CP$最小，求点$P$的坐标和最小值。\\
+%    (28)点$E$是线段$AC$上一动点，点$P$是线段$AB$上一动点，$PE\px \px BC$，若$P$点使得$\triangle PEC$面积最大，求出点$P$的坐标和面积的最大值。\\
+%    (29)点$P$是直线$AC$下方抛物线上一个动点，过点$P$作$PE\perp x$轴交$AC$于点$E$，$PF\perp AC$于点$F$。求点$P$，使得$\triangle PEF$周长最大。\\
+%    (30)判断点$O$关于直线$AC$的对称点是否在抛物线上。\\
+%    (31)动点$E$在坐标轴上，若$\triangle ACE$为直角三角形，求点$E$所有可能的坐标。 \\
+%    (32)动点$E$在坐标轴上，动点$P$在坐标平面内，$A,C,P,E$四点构成正方形顶点，求点$P$所有可能的坐标。\\
+%    (33)对称轴交$x$轴于点$E$，以$E$为圆心，$\frac{3\sqrt{10}}{5}$为半径作圆，判断直线$BC$与圆的位置关系。\\
+%    (34)动点$P$在直线$AC$上，动点$M$在抛物线上，且$PM\px \px AB$，$P,M,A,B$构成平行四边形，求点$P$的坐标。\\
+%    (35)对称轴交$x$轴于点$E$，动点$M$在$x$轴上，动点$P$在抛物线上，且$PM\px\px ED$，$P,M,E,D$构成平行四边形，求点$P$的坐标。\\
+%    (36)动点$M$在$x$轴上，动点$P$在抛物线上，且$PM \px\px AC$，$P,M,A,C$构成平行四边形，求$P$点坐标。\\
+%    (37)已知点$F(-1,-\frac{15}{4})$，求证：$PD=PF$. \\
+%    (38)已知点$F(-1,-\frac{15}{4})$，$\triangle PDF$是等边三角形，求点$P$的坐标。\\
+%    (39)已知点$E(\frac{1}{2},2)$，求$PD+PE$的最小值。\\
+%    (40)点$F$为平面内一定点，且$PD=PF$，求点$F$的坐标。\\
+%    (41)
+%    (42)
+%    (43)
+%    (44)
+%    (45)
+%    (46)
+%    (47)
+%    (48)
+%    (49)
+%    (50)
+%\end{example}
 \chapter{圆}
-\section{圆的基本概念}
+\section{圆的确定}
+\begin{knowledge}
+    圆是在同一平面内到定点距离等于定长的点的集合。定点即圆心，定长即半径长。\\
+    同圆：圆心相同、半径相等的圆。\\
+    等圆：半径相等的圆。\\
+    同心圆：圆心相同、半径不相等的圆。
+\end{knowledge}
+\begin{knowledge}
+    圆是轴对称、中心对称、旋转对称图形。有无数条经过圆心的对称轴，绕圆心旋转任意角度都能和自身重合。
+\end{knowledge}
+\begin{knowledge}
+    圆的确定 \\
+    (1)圆心和半径都确定时圆才能确定。\\
+    (2)经过一个已知点能作无数个圆。 \\
+    (3)经过两个已知点$A,B$能作无数个圆，这些圆的圆心在线段$AB$的垂直平分线上。\\
+    (4)不在同一直线上的三个点确定一个圆，这三个点可以组成一个三角形，圆心是的三角形的三条垂直平分线的交点(三角形的外心)，
+    圆是三角形的外接圆，三角形是圆的内接三角形。\\
+    (5)过$n(n\ge 4)$个点的圆，只可能作0个或1个圆，若能作一个圆，则圆心是任意三点确定的圆的圆心。
+\end{knowledge}
+\clearpage
+\section{圆心角、弧、弦、弦心距的关系}
+\begin{knowledge}
+    圆心角、弦、弧、弦心距 \\
+    圆心角：顶点在圆心的角。 \\
+    弦：连接圆上任意两点的线段。经过圆心的弦叫做直径，直径是同一圆中最长的弦，等于半径的2倍。\\
+    弧：圆上任意两点间的部分叫做圆弧，在同圆或等圆中，能够互相重合的弧叫做等弧。圆的任意一条直径的两个端点把圆分成两条弧，每条弧都叫做半圆。
+    在一个圆中，大于半圆的弧叫做优弧，小于半圆的弧叫做劣弧。\\
+    弦心距：圆心到弦长的距离。 \\
+    如图，$\bigodot O$中，$OM\perp AB$，$\angle BOA$为圆心角，$AB$为弦，$\mathop{AB}\limits^\frown$为弧，$OM$为弦心距。
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1118.png}
+\caption{圆心角、弦、弧、弦心距}
+\end{figure}
+\begin{problem}
+    下面说法正确的有：\\
+    (1)直径是圆中最长的弦 \\
+    (2)长度相等的两条弧是等弧 \\
+    (3)面积相等的两个圆是等圆 \\
+    (4)半径相等的两个半圆是等弧 \\
+    (5)弧分为优弧和劣弧 \\
+    (6)过圆内一定点可以作无数条直径 \\
+    (7)过圆内一定点可以作无数条弦 \\
+    (8)经过圆心的线段是直径 \\
+    (9)半径是弦
+\end{problem}
+\begin{knowledge}
+    圆心角、弧、弦、弦心距的关系 \\
+    在同圆或等圆中，相等的圆心角所对的弧相等，所对的弦相等，弦的弦心距相等。\\
+    推论：在同圆或等圆中，如果两个圆心角、两条弧、两条弦、两条弦心距中有一组量相等，那么它们所对应的其余各组量分别相等。
+    如图，在同圆或等圆中，若有如下条件： \\
+    (1)$AB=A'B'$ \\
+    (2)$\mathop{AB}\limits^{\frown}=\mathop{A'B'}\limits^{\frown}$ \\
+    (3)$\angle AOB=\angle A'OB'$ \\
+    (4)$OD=OD'$ \\
+    任选一个条件，可以推出其他三个条件。
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1117.png}
+\caption{圆心角、弧、弦、弦心距的关系}
+\end{figure}
 \clearpage
 \section{垂径定理}
+\begin{knowledge}
+    垂径定理 \\
+    垂直于弦的直径平分弦，并且平分弦所对的两条弧。\\
+    如图：$CD\perp AB \Rightarrow AE=AB,\mathop{AC}\limits^{\frown}=\mathop{BC}\limits^{\frown}$. \\
+    推论：平分弦(不是直径)的直径垂直于弦，并且平分弦所对的两条弧。\\
+    如图：$AE=EB \Rightarrow CD\perp AB,\mathop{AC}\limits^{\frown}=\mathop{BC}\limits^{\frown}$.
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1113.png}
+\caption{垂径定理}
+\end{figure}
+\begin{knowledge}
+    半径$(r)$、弦长$(l)$与弦心距$(d)$的关系 \\
+    $r^2=d^2+\frac{l^2}{4}$ \\
+    如上图，$OA^2=OE^2+\frac{AB^2}{4}$
+\end{knowledge}
+\clearpage
+\section{*圆周角定理与弦切角定理}
+\begin{knowledge}
+     顶点在圆上，并且两边都和圆相交的角叫圆周角。
+\end{knowledge}
+\begin{knowledge}
+    圆周角定理 \\
+    在同圆或等圆中，同弧或等弧所对的圆周角相等，都等于这条弧所对的圆心角的一半。\\
+    推论1：在同圆或等圆中，如果两个圆周角相等，它们所对的弧一定相等。\\
+    推论2：半圆(或直径)所对的圆周角是直角，$90^\circ$的圆周角所对的弦是直径。
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/864.png}
+\caption{圆周角定理}
+\end{figure}
+\begin{knowledge}
+    如图，$\triangle ABC,OA=OB=OC$，求证：$\angle ACB=90^\circ$. \\
+    证明：$OA=OC \Rightarrow \angle OAC=\angle OCA;OB=OC \Rightarrow \angle OBC=\angle OCB;$ \\
+    $\angle OAC+\angle OCA+\angle OCB+\angle OBC=180^\circ \Rightarrow \angle OCA+\angle OCB=\angle ACB=90^\circ$.
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1106.png}
+\caption{直径所对的圆周角是直角}
+\end{figure}
+\begin{knowledge}
+    弦切角定理 \\
+    弦切角(弦与切线的夹角)等于弦所夹的弧所对的圆周角。\\
+    如图，$CE$为$\bigodot O$的切线，$\angle BCE = \angle BAC$.
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1107.png}
+\caption{弦切角定理}
+\end{figure}
+\clearpage
+\section{点和圆的位置关系}
+\begin{knowledge}
+    设$\bigodot O$半径为$r$，点到圆心$O$的距离为$d$，点和圆有如下位置关系：\\
+    点在圆外$\Leftrightarrow d > r$ \\
+    点在圆上$\Leftrightarrow d = r$ \\
+    点在圆内$\Leftrightarrow d < r$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1108.png}
+\caption{点和圆的位置关系}
+\end{figure}
+\begin{problem}
+    一个点到圆的最大距离为$m$，最小距离为$n(m>n)$，求圆的半径。
+\end{problem}
 \clearpage
 \section{直线和圆的位置关系}
+\begin{knowledge}
+    设$\bigodot O$半径为$r$，直线$l$到圆心$O$的距离为$d$，直线和圆有如下位置关系：\\
+    相离(直线与圆没有公共点)$\Leftrightarrow d > r$ \\
+    相切(直线与圆有唯一公共点，直线叫做圆的切线，公共点叫做切点)$\Leftrightarrow d = r$ \\
+    相交(直线与圆有两个公共点，直线叫做圆的割线)$\Leftrightarrow d < r$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1109.png}
+\caption{直线和圆的位置关系}
+\end{figure}
+\begin{knowledge}
+    切线的判定 \\
+    定理：经过半径的外端并且垂直于这条半径的直线是圆的切线 \\
+    定义：和圆只有一个公共点的直线是圆的切线 \\
+    距离：和圆心距离等于半径的直线是圆的切线
+\end{knowledge}
+\begin{knowledge}
+    切线的性质 \\
+    定理：圆的切线垂直于过切点的半径 \\
+    推论1：经过圆心且垂直于切线的直线必经过切点 \\
+    推论2：经过切点且垂直与切线的直线必经过圆心
+\end{knowledge}
+\begin{knowledge}
+    切线长定理 \\
+    在经过圆外一点的圆的切线上，这点和切点之间的线段长叫做这点到圆的切线长。\\
+    从圆外一点引圆的两条切线，它们的切线长相等，圆心和这一点的连线平分两条切线的夹角。
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1110.png}
+\caption{切线长定理}
+\end{figure}
 \clearpage
 \section{圆和圆的位置关系}
+\begin{knowledge}
+    设$\bigodot O_1$半径为$r_1$，$\bigodot O_2$半径为$r_2$，圆心距$d$，圆和圆有如下位置关系： \\
+    外离$\Leftrightarrow d > r_1+r_2$ \\
+    外切$\Leftrightarrow d = r_1+r_2$ \\
+    相交$\Leftrightarrow |r_1-r_2|<d < r_1+r_2$ \\
+    内切$\Leftrightarrow d = |r_1-r_2|$ \\
+    内含$\Leftrightarrow 0 \le d < |r_1-r_2|$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1111.png}
+\caption{圆和圆的位置关系}
+\end{figure}
+\begin{knowledge}
+    如图，$\bigodot O_1$半径为$r_1$，$\bigodot O_2$半径为$r_2$，两圆圆心距为$d$. \\
+    外公切线：两圆在公切线的同旁 \\
+    内公切线：两圆在公切线的两旁 \\
+    如左图，$AB,CD$为外公切线，长度为$\sqrt{d^2-(r_1-r_2)^2}.$ \\
+    如右图，$AB,CD$为内公切线，长度为$\sqrt{d^2-(r_1+r_2)^2}.$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1101.png}
+\caption{公切线}
+\end{figure}
+\begin{table}[H]
+\centering
+\caption{公切线}
+\begin{tabular}{l|l|l|l}
+\hline
+\hline
+两圆位置关系 & 外公切线条数 & 内共切线条数 & 总条数 \\
+\hline
+外离 & 2 & 2 & 4 \\
+外切 & 2 & 1 & 3 \\
+相交 & 2 & 0 & 2 \\
+内切 & 1 & 0 & 1 \\
+外离 & 0 & 0 & 0 \\
+\hline
+\hline
+\end{tabular}
+\end{table}
 \clearpage
-\section{外接圆与内切圆}
+\section{正多边形与圆}
+\begin{knowledge}
+    各边相等，各个内角相等的多边形叫做正多边形。所有的正多边形均有一个外接圆。\\
+    (1)正多边形的中心：正多边形的外接圆的圆心 \\
+    (2)正多边形的半径：正多边形的外接圆的半径 \\
+    (3)正多边形的中心角：正多边形每一边所对的圆心角 \\
+    (4)正多边形的边心距：中心到正多边形的一边的距离
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1112.png}
+\caption{正多边形与圆}
+\end{figure}
+\begin{knowledge}
+    正多边形的性质 \\
+    (1)正$n$边形的半径和边心距把正$n$边形分成$2n$个全等的直角三角形 \\
+    (2)正多边形有$n$条通过中心的对称轴 \\
+    (3)奇数条边的正多边形的对称轴是顶点和对边中点的连线 \\
+    (4)偶数条边的正多边形的对称轴是相对顶点的连线和对边中点的连线 \\
+    (3)偶数条边的正多边形是中心对称图形
+\end{knowledge}
 \clearpage
-\section{阿氏圆}
+\section{*三角形的外接圆与内切圆}
+\begin{knowledge}
+    经过三角形三个顶点的圆叫做三角形的外接圆，三角形叫做圆的内接三角形。\\
+    (1)三角形的外接圆有且只有一个 \\
+    (2)一个圆的内接三角形有无数个 \\
+    (3)外接圆圆心(三角形外心)是三角形的三条垂直平分线的交点 \\
+    (4)锐角三角形外接圆圆心在其内部 \\
+    (5)直角三角形外接圆圆心在斜边中点 \\
+    (6)钝角三角形外接圆圆心在其外部
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1114.png}
+\caption{三角形外接圆}
+\end{figure}
+\begin{knowledge}
+    和三角形三边都相切的圆叫做三角形的内切圆，设$\triangle ABC$周长为$C$，内切圆半径为$r$.\\
+    (1)三角形的内切圆有且只有一个 \\
+    (2)内切圆圆心(三角形内心)是三角形的三条角平分线的交点 \\
+    (3)$S_{\triangle ABC}=\frac{1}{2}C·r$ \\
+    证明(3):$S_{\triangle ABC}=S_{\triangle AOC}+S_{\triangle BOC}+S_{\triangle AOB}=\frac{1}{2}(AC+BC+AB)r$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1115.png}
+\caption{三角形内切圆}
+\end{figure}
+\begin{knowledge}
+    直角三角形的外接圆和内切圆 \\
+    如图，$\triangle ACB,\angle ACB=90^\circ,\bigodot O$是其内切圆，内切圆半径为$r$，外接圆半径为$R$.\\
+    (1)$AE=AF\quad  CE=CD\quad BD=BF$ \\
+    (2)四边形$CEOD$为正方形 \\
+    (3)$r=\frac{AC+BC-AB}{2}$ \\
+    (4)$R=\frac{AB}{2}$
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1116.png}
+\caption{直角三角形的外接圆和内切圆}
+\end{figure}
+\begin{problem}
+    如图，$\triangle ABC$中，$H$为三条高线的交点，$OM\perp BC$于$M$. \\
+    (1)求证：$AH=2OM$; \\
+    (2)若$\angle BAC=60^\circ$，求证：$AH=AO$.
+\end{problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1119.png}
+\caption{练习图}
+\end{figure}
 \clearpage
-\section{托勒密定理}
+\section{*圆内接四边形与托勒密定理}
+\begin{knowledge}
+    若一个四边形四个顶点都在同一个圆上，则四边形叫做圆内接四边形，圆叫做四边形的外接圆。\\
+    圆内接四边形的对角互补。\\
+    圆内接四边形的一个外角等于它的内对角。
+\end{knowledge}
+\begin{knowledge}
+    托勒密定理 \\
+    圆内接四边形$ABCD$，两条对角线的乘积等于两组对边乘积之和，即$AB·CD+AD·BC=AC·BD$. \\
+    证明：作$\angle BAE=\angle CAD$交$BD$于$E$，易证$\triangle ABE\sim \triangle ACD,\triangle ABC \sim \triangle AED$. \\
+    $\triangle ABE \sim \triangle ACD \Rightarrow \frac{AB}{AC}=\frac{BE}{CD}=\frac{AE}{AD} \Rightarrow AB·CD=AC·BE$ \\
+    $\triangle ABC \sim \triangle AED \Rightarrow \frac{AB}{AE}=\frac{BC}{ED}=\frac{AC}{AD} \Rightarrow AD·BC=AC·ED$ \\
+    $AB·CD+AD·BC=AC(BE+ED)=AC·BD$ \\
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1102.png}
+\caption{托勒密定理}
+\end{figure}
+\begin{problem}
+    不使用托勒密定理，证明如下结论：\\
+    (1)如左图，$\triangle ABC$为等边三角形，求证：$BD=AD+CD$. \\
+    (2)如右图，$\triangle ABC$为等腰直角三角形，求证：$\sqrt{2}AD=BD+CD$.
+\end{problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{picture/1103.png}
+\caption{练习图}
+\end{figure}
 \clearpage
-\section{圆幂定理}
+\section{*四点共圆}
+\begin{knowledge}
+    四点共圆的判定方法：\\
+    (1)若四个点到一定点的距离相等，则这四个点共圆。\\
+    (2)若一个四边形的一组对角的和等于180度，则这个四边形四个顶点共圆。\\
+    (3)若一个四边形的一个外角等于它的内对角，则这个四边形四个顶点共圆。\\
+    (4)若两个点在一条线段的同旁，并且和这条线段的两端连线所夹的角相等，那么这两点和这条线的两个端点共圆。
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm]{picture/862.png}
+\caption{四点共圆}
+\end{figure}
 \clearpage
-\section{四点共圆}
+\section{*圆幂定理}
+\begin{knowledge}
+    圆幂定理：交点为$P$的两条相交直线与圆$O$相交于$A,B$与$C,D$，则有$PA·PB=PC·PD$，证明方法：$\triangle PAD \sim \triangle PCB$
+    或$\triangle PAC \sim \triangle PDB$. \\
+    (1)相交弦定理：圆内的两条弦$AB,CD$交于$P$.\\
+    (2)割线定理：从圆外一点$P$引圆的两条割线$AB,CD$.\\
+    (3)切割线定理：从圆外一点$P$引圆的一条切线$PA(B)$和一条割线$CD$. \\
+    (4)切线长定理：从圆外一点$P$引圆的两条切线$PA(B),PC(D)$，此时$PA(B)=PC(D)$.
+\end{knowledge}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{picture/863.png}
+\caption{圆幂定理}
+\end{figure}
 \clearpage
-\chapter{专题}
+\section{*阿基米德折弦定理}
+\begin{model}
+    如图，$AB,BC$是$\bigodot O$两条弦，$M$是$\mathop{ABC}\limits^{\frown}$的中点，$MD\perp BC$，垂足为$D$，求证：$AB+BD=CD$. \\
+    证明：在$BC$上截取$CG=AB$，$\mathop{AM}\limits^{\frown}=\mathop{MC}\limits^{\frown} \Rightarrow AM=MC$，则$\triangle ABM \backcong \triangle CGM$，
+    $MD\perp BC,BM=MG \Rightarrow \triangle BMD \backcong \triangle GMD \Rightarrow BD=DG \Rightarrow AB+BD=CD$.
+\end{model}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1104.png}
+\caption{阿基米德折弦定理}
+\end{figure}
+\begin{problem}
+    如图，$\triangle ABC$内接于$\bigodot O,BC=2,AB=AC$，点$D$为$\mathop{AC}\limits^{\frown}$上一动点，且$\cos \angle ABC=\frac{\sqrt{10}}{10}$. \\
+    (1)求$AB$的长度；\\
+    (2)在点$D$的运动过程中，弦$AD$的延长线交$BC$延长线于点$E$，求$AD·AE$的值；\\
+    (3)在点$D$的运动过程中，过$A$点作$AH\perp BD$，求证：$BH=CD+DH$.
+\end{problem}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4cm]{picture/1105.png}
+\caption{2018深圳中考}
+\end{figure}
+\clearpage
+\chapter{统计初步}
+\section{数据整理与表示}
+\begin{knowledge}
+    统计图 \\
+    条形图：有利于比较数据间的差异 \\
+    折线图：直观反映数据的变化趋势 \\
+    扇形图：体现数据部分与整体的关系
+\end{knowledge}
+\begin{knowledge}
+    统计学基本概念 \\
+    总体：所有考察对象的全体 \\
+    个体：总体中每一个考察对象 \\
+    样本：从总体中抽取出的一部分个体 \\
+    样本容量：样本中个体的数目
+\end{knowledge}
+\clearpage
+\section{反映一组数据平均水平、波动程度、数据分布的量}
+\begin{knowledge}
+    反映一组数据平均水平的量 \\
+    平均数：$\overline x = \frac{1}{n}(x_1+x_2+...+x_n)$ \\
+    加权平均数：$\overline x=\frac{x_1f_1+x_2f_2+...+x_nf_n}{f_1+f_2+...+f_n}$
+\end{knowledge}
+\begin{knowledge}
+    反映一组数据波动程度的量 \\
+    众数：在一组数据中出现次数最多的数据 \\
+    中位数：一组数据排序后排在最中间的一个数或最中间两个数的平均数 \\
+    若有$n$个数，当$n$为奇数时，中位数为第$\frac{n+1}{2}$个数；当$n$为偶数时，中位数为第$\frac{n}{2},\frac{n}{2}+1$个数的平均数。\\
+    一组数据的中位数一定唯一，众数可能有多个，也可能没有(所有数出现次数一样多)。\\
+    平均数能反映所有数据的情况，但容易受极端数据的影响，中位数和众数不受极端数值的影响，但不能反映所有数据的情况。\\
+    方差：$s^2=\frac{1}{n}[(x_1-\overline x)^2+(x_2-\overline x)^2+...+(x_n-\overline x)^2]$ \\
+    标准差：$s=\sqrt{s^2}=\sqrt{\frac{1}{n}[(x_1-\overline x)^2+(x_2-\overline x)^2+...+(x_n-\overline x)^2]}$ \\
+    数据的方差(或标准差)越小，说明这组数据越稳定，数据的波动越小，数据的离散程度越小，数据越集中。
+\end{knowledge}
+\begin{knowledge}
+    若一组数据的平均数为$\overline x$，方差为$s^2$，标准差为$s$. \\
+    (1)若所有数据都加上一个常数$b$，则平均数变为$\overline x+b$，方差和标准差不变。 \\
+    (2)若所有数据都乘上一个常数$A$，则平均数变为$A\overline x$，方差变为$A^2s^2$，标准差变为$|A|s$.
+\end{knowledge}
+\begin{knowledge}
+    反映一组数据分布的量 \\
+    频数：每个对象出现的次数 \\
+    频率：每个对象出现的次数与总次数的比值  \\
+    组数：把全体样本分成的组的个数 \\
+    组距：每个小组的两个端点的距离 \\
+    极差：一组数据中最大数据与最小数据的差 \\
+    绘制频数分布直方图时，若分组过少，则数据非常集中；若分组过多，则数据非常分散。
+\end{knowledge}
+\begin{knowledge}
+    频数分布直方图与条形图的区别 \\
+    (1)条形图用条形的高度表示频数的大小，直方图用长方形的面积表示频数。\\
+    (2)条形图横轴的数据是孤立的，是具体的数据；直方图横轴的数据是连续的，是一个范围。 \\
+    (3)条形图各个长方形之间有空隙，直方图各个长方形之间无空隙。
+\end{knowledge}
+\begin{example}
+    某学校准备从63名初三学生中挑选出身高接近的40名同学参加比赛，收集到的63名同学身高如下(单位cm)：\\
+    158 158 160 168 159 159 151 158 159 \\
+    168 158 154 158 154 169 158 158 158 \\
+    159 167 170 153 160 160 159 159 160 \\
+    149 163 163 162 172 161 153 156 162 \\
+    162 163 157 162 162 161 157 157 164 \\
+    155 156 165 166 156 154 166 164 165 \\
+    156 157 153 165 159 157 155 164 156 \\
+    选择怎样身高范围的学生比较合理呢？\\
+    分析：以上数据，最小值为149cm，最大值为172cm，差值为23cm，采用等距分组，每3cm分一组，一共8组。\\
+    身高范围：$149 \le x < 152, 152 \le x < 155,...,170 \le x < 173$，组距为3，组数为8. \\
+    统计频数如下表：身高在155cm至164cm(不含164cm)的学生有41人，可以从这个身高范围中选取学生。
+\end{example}
+\begin{table}[H]
+\centering
+\caption{频数分布表}
+\begin{tabular}{l|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}}
+\hline
+分组 & $149\le x<152$ & $152\le x<155$ & $155\le x<158$ & $158\le x<161$ & $161\le x<164$ & $164\le x<167$ & $167\le x<170$ & $170\le x<173$\\
+\hline
+频数 & 2 & 6 & 12 & 19 & 10 & 8 & 4 & 2 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{picture/1200.jpg}
+\caption{频数分布直方图}
+\end{figure}
+\begin{knowledge}
+    频数分布折线图 \\
+    取直方图各矩形上边的中点，在横轴上取两个频数为0的点，这两点分别与直方图左右两端的两个长方形的组中值(矩形宽的中点)相距一个组距，
+    将这些点用线段依次联结起来，就可以得到频数分布折线图。
+\end{knowledge}
+\clearpage
 % 正文后部分
 \backmatter
 

@@ -163,14 +163,14 @@
   }
 \pagestyle{fancy}
   \fancyhead[L,R]       { }
-  \fancyhead[C]         { \small 初中总复习讲义 }
+  \fancyhead[C]         { \small 初中总复习讲义(1.5.1) }
   \fancyfoot[C]         { \small \thepage }
   \fancyfoot[L,R]       { }
   \headheight = 13 pt
 \fancypagestyle{plain}
   {
     \fancyhead[L,R]     { }
-    \fancyhead[C]       { \small 初中总复习讲义  }
+    \fancyhead[C]       { \small 初中总复习讲义(1.5.1)  }
     \fancyfoot[C]       { \small \thepage }
     \fancyfoot[L,R]     { }
     \headheight = 13 pt
